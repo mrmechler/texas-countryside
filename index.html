@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Texas Countryside | Country Homes, Land, Ranches, Farms & Retreats</title>
+  <meta name="description" content="Explore country homes, land, ranches, farms, retreats, and rural properties across Central Texas. Now featuring 320 Pecan 3 in Florence, Texas." />
+
+  <!--
+  ============================================================
+  TEXASCOUNTRYSIDE.COM IMAGE FILES
+  Upload these to an /images folder in GitHub.
+  ============================================================
+
+  LOGO / BRANDING
+  - texas-countryside-logo-white.png
+    White transparent logo similar to the top-left mockup.
+
+  HERO / PROPERTY
+  - 320-pecan-3-hero-aerial.jpg
+    Wide cinematic drone shot. Best aerial at golden hour showing the house, pool,
+    trees, guest structures/workshop, and surrounding countryside.
+
+  - 320-pecan-3-featured-aerial.jpg
+    Strong aerial overview for the featured property section. Similar to hero but
+    ideally a slightly closer angle.
+
+  - 320-pecan-3-exterior.jpg
+    Best main residence exterior, preferably twilight or warm evening.
+
+  - 320-pecan-3-pool.png
+    Pool image with water, patio, trees, and outdoor lifestyle feel.
+
+  - 320-pecan-3-living.jpg
+    Best interior living/great room shot.
+
+  - 320-pecan-3-driveway.jpg
+    Tree-lined driveway, entry, or arrival shot.
+
+  - 320-pecan-3-guest-house.jpg
+    Guest house or secondary residence exterior.
+
+  - 320-pecan-3-workshop.jpg
+    Workshop, shop, garage, barn, or equipment space.
+
+  - 320-pecan-3-orchard.jpg
+    Orchard, garden, trees, land, or agricultural/lifestyle detail.
+
+  POSSIBILITY CARD SUPPORTING IMAGES
+  - horse-property.jpg
+  - hobby-farm.jpg
+  - vineyard.jpg
+  - wedding-venue.jpg
+  - corporate-retreat.jpg
+  - goat-yoga.jpg
+  - water-storage.jpg
+  - sunset-land.jpg
+
+  AGENT
+  - michael-mechler.jpg
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --black: #070907;
+      --charcoal: #111411;
+      --deep-green: #142b22;
+      --deep-green-2: #0f241c;
+      --button-green: #203d30;
+      --cream: #f4efe5;
+      --cream-2: #ebe0ce;
+      --gold: #caa75e;
+      --gold-light: #e5cc83;
+      --white: #ffffff;
+      --text: #171915;
+      --muted: #6f685d;
+      --line: rgba(255,255,255,.18);
+      --dark-line: rgba(23,25,21,.14);
+      --max: 1210px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--cream);
+      font-family: "Inter", Arial, sans-serif;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    .serif {
+      font-family: "Playfair Display", Georgia, serif;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .17em;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 26px;
+      border: 1px solid transparent;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      line-height: 1;
+      cursor: pointer;
+      transition: transform .18s ease, opacity .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-gold {
+      color: #16130d;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    }
+
+    .btn-dark {
+      color: #fff;
+      background: var(--button-green);
+    }
+
+    .btn-outline-light {
+      color: #fff;
+      border-color: rgba(255,255,255,.46);
+      background: rgba(0,0,0,.18);
+    }
+
+    .btn-outline-dark {
+      color: #fff;
+      border-color: rgba(255,255,255,.38);
+      background: transparent;
+    }
+
+    /* HEADER */
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 20;
+      height: 92px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(9,11,10,.88), rgba(9,11,10,.48));
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .logo {
+      width: 210px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+    }
+
+    .logo img {
+      width: 200px;
+      height: auto;
+    }
+
+    .logo-fallback {
+      display: none;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-tree {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.36);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .logo-text strong {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      text-transform: uppercase;
+      font-size: 21px;
+      line-height: .88;
+      letter-spacing: .06em;
+    }
+
+    .logo-text span {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255,255,255,.68);
+      font-size: 8px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+      color: rgba(255,255,255,.9);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .nav-links a {
+      padding: 12px 0;
+    }
+
+    .nav-button {
+      border: 1px solid rgba(202,167,94,.78);
+      color: #fff;
+      padding: 17px 25px;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 585px;
+      color: #fff;
+      position: relative;
+      background:
+        linear-gradient(90deg, rgba(5,7,6,.9) 0%, rgba(5,7,6,.74) 30%, rgba(5,7,6,.22) 74%),
+        linear-gradient(180deg, rgba(5,7,6,.23), rgba(5,7,6,.35)),
+        url("images/320-pecan-3-hero-aerial.jpg") center center / cover no-repeat;
+    }
+
+    .hero .container {
+      min-height: 585px;
+      display: flex;
+      align-items: center;
+      padding-top: 85px;
+    }
+
+    .hero-copy {
+      max-width: 675px;
+      padding-top: 18px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(53px, 6.4vw, 84px);
+      line-height: .95;
+      font-weight: 500;
+      letter-spacing: -.055em;
+      margin: 0 0 18px;
+    }
+
+    .hero-rule {
+      width: 88px;
+      height: 2px;
+      background: var(--gold-light);
+      margin: 24px 0 19px;
+    }
+
+    .hero-kicker {
+      font-size: 16px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin: 0 0 26px;
+    }
+
+    .hero p {
+      max-width: 440px;
+      margin: 0 0 27px;
+      color: rgba(255,255,255,.86);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .button-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* PROPERTY TYPE BAND */
+    .types {
+      padding: 34px 0 43px;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(202,167,94,.10), transparent 30%),
+        linear-gradient(180deg, #fbf7ef, var(--cream));
+      text-align: center;
+    }
+
+    .types h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(29px, 3vw, 39px);
+      line-height: 1.08;
+      font-weight: 500;
+      letter-spacing: -.035em;
+      margin: 0 0 34px;
+    }
+
+    .type-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border-left: 1px solid var(--dark-line);
+      border-right: 1px solid var(--dark-line);
+      margin-bottom: 30px;
+    }
+
+    .type-card {
+      min-height: 136px;
+      padding: 0 20px;
+      border-right: 1px solid var(--dark-line);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .type-card:last-child {
+      border-right: 0;
+    }
+
+    .type-icon {
+      width: 48px;
+      height: 48px;
+      color: #455b51;
+      opacity: .92;
+    }
+
+    .type-card h3 {
+      margin: 0;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .type-card p {
+      max-width: 142px;
+      margin: 0;
+      color: #60594f;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .types .btn {
+      min-width: 330px;
+    }
+
+    /* FEATURED PROPERTY */
+    .featured {
+      display: grid;
+      grid-template-columns: 43% 57%;
+      background: #070907;
+      color: #fff;
+      border-top: 1px solid #201e19;
+      border-bottom: 1px solid #201e19;
+    }
+
+    .featured-copy {
+      padding: 50px 58px 44px max(52px, calc((100vw - var(--max)) / 2 + 0px));
+      background:
+        radial-gradient(circle at 17% 8%, rgba(202,167,94,.16), transparent 25%),
+        linear-gradient(135deg, #080908, #111612);
+      min-height: 515px;
+    }
+
+    .featured h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(44px, 4.1vw, 64px);
+      line-height: .95;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: -.035em;
+      margin: 17px 0 8px;
+    }
+
+    .featured-location {
+      color: rgba(255,255,255,.75);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      margin-bottom: 28px;
+    }
+
+    .featured-copy p {
+      max-width: 450px;
+      color: rgba(255,255,255,.75);
+      font-size: 15px;
+      line-height: 1.58;
+      margin: 0 0 28px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      max-width: 485px;
+      margin: 0 0 32px;
+    }
+
+    .stat {
+      min-height: 75px;
+      padding: 12px 8px 10px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,.16);
+      border-bottom: 1px solid rgba(255,255,255,.11);
+    }
+
+    .stat:nth-child(4n) {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold-light);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -.035em;
+      font-variant-numeric: lining-nums;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 7px;
+      color: rgba(255,255,255,.7);
+      font-size: 9px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    .featured-media {
+      display: grid;
+      grid-template-rows: 1.55fr .76fr;
+      min-height: 515px;
+    }
+
+    .featured-main {
+      background: url("images/320-pecan-3-featured-aerial.jpg") center center / cover no-repeat;
+      border-left: 2px solid #111;
+    }
+
+    .featured-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-left: 2px solid #111;
+      border-top: 2px solid #111;
+    }
+
+    .gallery-img {
+      background-position: center;
+      background-size: cover;
+      min-height: 184px;
+      border-right: 2px solid #111;
+    }
+
+    .gallery-img:last-child {
+      border-right: 0;
+    }
+
+    .img-exterior { background-image: url("images/320-pecan-3-exterior.jpg"); }
+    .img-pool { background-image: url("images/320-pecan-3-pool.png"); }
+    .img-living { background-image: url("images/320-pecan-3-living.jpg"); }
+
+    /* TOUR */
+    .tour {
+      color: #fff;
+      padding: 52px 0;
+      background:
+        linear-gradient(90deg, rgba(5,7,6,.92) 0%, rgba(5,7,6,.82) 38%, rgba(5,7,6,.38) 100%),
+        url("images/320-pecan-3-hero-aerial.jpg") center center / cover no-repeat;
+    }
+
+    .tour-grid {
+      display: grid;
+      grid-template-columns: 34% 66%;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .tour h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(41px, 4.3vw, 61px);
+      line-height: .96;
+      font-weight: 500;
+      letter-spacing: -.04em;
+      margin: 0 0 24px;
+    }
+
+    .tour p {
+      max-width: 390px;
+      margin: 0 0 25px;
+      color: rgba(255,255,255,.76);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .video-box {
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border: 2px solid rgba(255,255,255,.72);
+      box-shadow: 0 28px 90px rgba(0,0,0,.4);
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* POSSIBILITIES */
+    .possibilities {
+      padding: 20px 0 43px;
+      background:
+        linear-gradient(rgba(250,247,240,.95), rgba(250,247,240,.95)),
+        url("images/320-pecan-3-driveway.jpg") center center / cover no-repeat;
+      text-align: center;
+    }
+
+    .possibilities h2 {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(38px, 4vw, 56px);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -.04em;
+    }
+
+    .possibilities-sub {
+      color: #5f594f;
+      margin: 4px 0 22px;
+      font-size: 14px;
+    }
+
+    .poss-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 18px;
+      text-align: center;
+    }
+
+    .poss-img {
+      width: 100%;
+      aspect-ratio: 1.45 / 1;
+      background-position: center;
+      background-size: cover;
+      background-color: #cfc6b6;
+      border: 1px solid rgba(23,25,21,.08);
+    }
+
+    .poss-card h3 {
+      margin: 11px 0 5px;
+      min-height: 29px;
+      font-size: 11px;
+      line-height: 1.15;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .poss-card p {
+      max-width: 150px;
+      margin: 0 auto;
+      color: #5d564d;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .disclaimer {
+      max-width: 850px;
+      margin: 28px auto 0;
+      color: #686054;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      color: #fff;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(202,167,94,.14), transparent 30%),
+        linear-gradient(135deg, #13291f, #07100c);
+      padding: 48px 0 34px;
+    }
+
+    .final-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .9fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .final-cta h2 {
+      margin: 0 0 14px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(34px, 3.8vw, 50px);
+      line-height: 1.05;
+      font-weight: 500;
+      letter-spacing: -.04em;
+    }
+
+    .final-cta p {
+      max-width: 710px;
+      margin: 0 0 25px;
+      color: rgba(255,255,255,.76);
+      font-size: 15px;
+    }
+
+    .agent {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .agent img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 999px;
+      border: 3px solid rgba(255,255,255,.9);
+      box-shadow: 0 14px 45px rgba(0,0,0,.28);
+    }
+
+    .agent h3 {
+      margin: 0 0 3px;
+      font-size: 17px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    .agent .company {
+      color: var(--gold-light);
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .agent p {
+      margin: 0 0 12px;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .agent-lines {
+      display: grid;
+      gap: 4px;
+      color: rgba(255,255,255,.84);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* FOOTER */
+    .footer {
+      color: rgba(255,255,255,.58);
+      background: #07100c;
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding: 23px 0;
+      font-size: 11px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .footer-logo {
+      color: #fff;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 23px;
+      line-height: .92;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .footer-legal {
+      text-align: right;
+    }
+
+    /* Inline line icons to match the mockup style */
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.55;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    @media (max-width: 1150px) {
+      .nav-links { display: none; }
+
+      .site-header { height: 80px; }
+
+      .hero,
+      .hero .container { min-height: 560px; }
+
+      .type-grid { grid-template-columns: repeat(3, 1fr); }
+
+      .type-card:nth-child(3) { border-right: 0; }
+
+      .type-card:nth-child(n+4) { border-top: 1px solid var(--dark-line); }
+
+      .featured,
+      .tour-grid,
+      .final-grid { grid-template-columns: 1fr; }
+
+      .featured-copy {
+        padding: 50px max(32px, calc((100vw - var(--max)) / 2 + 32px));
+        min-height: auto;
+      }
+
+      .poss-grid { grid-template-columns: repeat(3, 1fr); }
+
+      .tour-grid { gap: 30px; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(100% - 28px, var(--max)); }
+
+      .logo { width: auto; }
+
+      .logo img { width: 170px; }
+
+      .nav-button { display: none; }
+
+      .hero,
+      .hero .container { min-height: 640px; }
+
+      .hero h1 { font-size: 51px; }
+
+      .button-row {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .btn { width: 100%; }
+
+      .type-grid { grid-template-columns: 1fr; }
+
+      .type-card {
+        border-right: 0 !important;
+        border-top: 1px solid var(--dark-line);
+      }
+
+      .type-card:first-child { border-top: 0; }
+
+      .types .btn { min-width: 0; }
+
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .stat:nth-child(2n) { border-right: 0; }
+
+      .featured-media { grid-template-rows: auto auto; }
+
+      .featured-main { min-height: 260px; }
+
+      .featured-gallery { grid-template-columns: 1fr; }
+
+      .gallery-img {
+        min-height: 215px;
+        border-right: 0;
+        border-bottom: 2px solid #111;
+      }
+
+      .gallery-img:last-child { border-bottom: 0; }
+
+      .poss-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px 14px;
+      }
+
+      .poss-card p { font-size: 11px; }
+
+      .agent { grid-template-columns: 1fr; }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .footer-legal { text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 44px; }
+
+      .poss-grid { grid-template-columns: 1fr; }
+
+      .poss-card p { max-width: 260px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="#top" aria-label="Texas Countryside home">
+        <img src="images/texas-countryside-logo-white.png" alt="Texas Countryside" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="logo-fallback">
+          <span class="logo-tree">♣</span>
+          <span class="logo-text">
+            <strong>Texas<br>Countryside</strong>
+            <span>Homes · Land · Ranches · Retreats</span>
+          </span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#featured">Featured Property</a>
+        <a href="#possibilities">Possibilities</a>
+        <a href="#tour">Aerial Tour</a>
+        <a href="#search">Find Properties</a>
+        <a href="#about">About Michael</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="nav-button" href="#contact">Schedule a Showing</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <h1>Find Your Place in<br>the Texas Countryside</h1>
+          <div class="hero-rule"></div>
+          <div class="hero-kicker">Country Homes. Land. Ranches. Farms. Retreats.</div>
+          <p>
+            Wide open spaces. Endless possibilities.<br>
+            Now featuring 320 Pecan 3 in Florence, Texas.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-gold" href="#featured">Explore 320 Pecan 3</a>
+            <a class="btn btn-outline-light" href="#search">Find Similar Properties</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="types" id="types">
+      <div class="container">
+        <h2>What Kind of Countryside Property Are You Looking For?</h2>
+
+        <div class="type-grid">
+          <article class="type-card">
+            <div class="type-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M6 40h36"/><path d="M10 40V22l14-12 14 12v18"/><path d="M18 40V28h12v12"/><path d="M16 24h4M28 24h4"/></svg>
+            </div>
+            <h3>Country Homes</h3>
+            <p>Comfortable living with room to breathe.</p>
+          </article>
+
+          <article class="type-card">
+            <div class="type-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M24 42V10"/><path d="M15 22c-6-2-7-10-1-14 4-2 8 0 10 4 2-4 6-6 10-4 6 4 5 12-1 14"/><path d="M10 32c8 4 20 4 28 0"/><path d="M8 42h32"/></svg>
+            </div>
+            <h3>Land &amp; Acreage</h3>
+            <p>Build, hold, invest or create.</p>
+          </article>
+
+          <article class="type-card">
+            <div class="type-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M7 40h34"/><path d="M11 40V22l13-9 13 9v18"/><path d="M16 40V28h16v12"/><path d="M16 22h16"/><path d="M24 13V7h7"/></svg>
+            </div>
+            <h3>Farms &amp; Hobby Farms</h3>
+            <p>Gardens, animals, orchards, workshops and more.</p>
+          </article>
+
+          <article class="type-card">
+            <div class="type-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M11 29c5-12 17-15 25-8l4 1"/><path d="M15 30l-3 9M31 30l3 9M21 31v8"/><path d="M37 22l3 7"/><path d="M10 29l-3 3"/></svg>
+            </div>
+            <h3>Ranch &amp; Horse Property</h3>
+            <p>Pasture, barns, riding and wide open spaces.</p>
+          </article>
+
+          <article class="type-card">
+            <div class="type-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><circle cx="16" cy="16" r="5"/><circle cx="32" cy="16" r="5"/><circle cx="24" cy="11" r="5"/><path d="M8 38c1-7 5-11 8-11s7 4 8 11"/><path d="M24 38c1-7 5-11 8-11s7 4 8 11"/><path d="M16 34c1-7 5-11 8-11s7 4 8 11"/></svg>
+            </div>
+            <h3>Family Compounds</h3>
+            <p>Multiple living spaces for multi-generational living.</p>
+          </article>
+
+          <article class="type-card">
+            <div class="type-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M41 7C24 8 12 18 9 39c18-2 29-15 32-32Z"/><path d="M10 38c9-10 17-17 29-29"/></svg>
+            </div>
+            <h3>Retreat Properties</h3>
+            <p>Wellness, hospitality, and private escapes.</p>
+          </article>
+        </div>
+
+        <a class="btn btn-dark" href="#search">Tell Michael What You’re Looking For</a>
+      </div>
+    </section>
+
+    <section class="featured" id="featured">
+      <div class="featured-copy">
+        <div class="eyebrow">Featured Countryside Property</div>
+        <h2>320 Pecan 3</h2>
+        <div class="featured-location">Florence, Texas</div>
+        <p>
+          A rare countryside property with multiple residences, acreage, pool, workshop, orchard,
+          rainwater collection, and the flexibility to become a family compound, retreat, hobby farm, or legacy estate.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat"><strong>8.57</strong><span>Acres</span></div>
+          <div class="stat"><strong>5,753</strong><span>Sq Ft</span></div>
+          <div class="stat"><strong>9</strong><span>Bedrooms</span></div>
+          <div class="stat"><strong>6</strong><span>Bathrooms</span></div>
+          <div class="stat"><strong>Multi</strong><span>Residences</span></div>
+          <div class="stat"><strong>Shop</strong><span>Workshop</span></div>
+          <div class="stat"><strong>Pool</strong><span>Outdoor Living</span></div>
+          <div class="stat"><strong>Water</strong><span>Rainwater Collection</span></div>
+        </div>
+
+        <a class="btn btn-gold" href="#contact">View Property Details</a>
+      </div>
+
+      <div class="featured-media">
+        <div class="featured-main" role="img" aria-label="Aerial view of 320 Pecan 3"></div>
+        <div class="featured-gallery" aria-label="Property highlights">
+          <div class="gallery-img img-exterior" role="img" aria-label="Exterior of 320 Pecan 3"></div>
+          <div class="gallery-img img-pool" role="img" aria-label="Pool at 320 Pecan 3"></div>
+          <div class="gallery-img img-living" role="img" aria-label="Interior living area at 320 Pecan 3"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tour" id="tour">
+      <div class="container tour-grid">
+        <div>
+          <h2>See 320 Pecan 3<br>From Above</h2>
+          <p>
+            The scale, layout, and setting of a countryside property are difficult to understand from photos alone.
+            The aerial tour gives you a better sense of the residences, acreage, pool, workshop, orchard,
+            outdoor gathering areas, and surrounding Texas countryside.
+          </p>
+          <a class="btn btn-dark" href="https://www.youtube.com/watch?v=IGfhZGHNIkY" target="_blank" rel="noopener">Watch the Aerial Tour</a>
+        </div>
+
+        <div class="video-box">
+          <iframe
+            src="https://www.youtube.com/embed/IGfhZGHNIkY"
+            title="320 Pecan 3 Florence Texas Aerial Tour"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="possibilities" id="possibilities">
+      <div class="container">
+        <h2>One Property. Endless Possibilities.</h2>
+        <div class="possibilities-sub">320 Pecan 3 offers the kind of flexibility rural buyers rarely find in one place.</div>
+
+        <div class="poss-grid">
+          <article class="poss-card">
+            <div class="poss-img" style="background-image:url('images/320-pecan-3-guest-house.jpg')"></div>
+            <h3>Multi-Generational<br>Compound</h3>
+            <p>Separate living spaces for family members to live independently while remaining connected.</p>
+          </article>
+
+          <article class="poss-card">
+            <div class="poss-img" style="background-image:url('images/320-pecan-3-driveway.jpg')"></div>
+            <h3>Legacy Estate</h3>
+            <p>A property built to be enjoyed by generations.</p>
+          </article>
+
+          <article class="poss-card">
+            <div class="poss-img" style="background-image:url('images/320-pecan-3-pool.png')"></div>
+            <h3>Wellness Retreat</h3>
+            <p>Privacy, nature, gardens and space to rest, reconnect and heal.</p>
+          </article>
+
+          <article class="poss-card">
+            <div class="poss-img" style="background-image:url('images/horse-property.jpg')"></div>
+            <h3>Therapeutic<br>Horse Ranch</h3>
+            <p>Pasture, barns, riding areas and room for your horses to thrive.</p>
+          </article>
+
+          <article class="poss-card">
+            <div class="poss-img" style="background-image:url('images/hobby-farm.jpg')"></div>
+            <h3>Hobby Farm</h3>
+            <p>Orchard, animals, gardens, workshop and wide open possibilities.</p>
+          </article>
+
+          <article class="poss-card">
+            <div class="poss-img" style="background-image:url('images/vineyard.jpg')"></div>
+            <h3>Boutique Vineyard</h3>
+            <p>The land, climate and setting for small-scale vineyard or boutique wine production.</p>
+          </article>
+
+          <article class="poss-card">
+            <div class="poss-img" style="background-image:url('images/wedding-venue.jpg')"></div>
+            <h3>Wedding Venue</h3>
+            <p>A beautiful setting for unforgettable events and celebrations.</p>
+          </article>
+
+          <article class="poss-card">
+            <div class="poss-img" style="background-image:url('images/corporate-retreat.jpg')"></div>
+            <h3>Corporate Retreat</h3>
+            <p>Private, peaceful spaces for teams to gather, strategize and recharge.</p>
+          </article>
+
+          <article class="poss-card">
+            <div class="poss-img" style="background-image:url('images/goat-yoga.jpg')"></div>
+            <h3>Goat Yoga</h3>
+            <p>Because why not? Bring your goats. We won’t judge.</p>
+          </article>
+
+          <article class="poss-card">
+            <div class="poss-img" style="background-image:url('images/320-pecan-3-exterior.jpg')"></div>
+            <h3>Airbnb Destination</h3>
+            <p>Multiple structures and unique guest experiences that create lasting memories.</p>
+          </article>
+
+          <article class="poss-card">
+            <div class="poss-img" style="background-image:url('images/water-storage.jpg')"></div>
+            <h3>Off-Grid Homestead</h3>
+            <p>Rainwater collection, storage capacity and infrastructure for self-sufficiency.</p>
+          </article>
+
+          <article class="poss-card">
+            <div class="poss-img" style="background-image:url('images/sunset-land.jpg')"></div>
+            <h3>Private Preparedness<br>Retreat</h3>
+            <p>Peace of mind comes from privacy, independence and being ready.</p>
+          </article>
+        </div>
+
+        <p class="disclaimer">
+          All potential uses should be independently verified by the buyer, including zoning, permitting, restrictions,
+          utilities, insurance, event use, agricultural use and short-term rental eligibility.
+        </p>
+      </div>
+    </section>
+
+    <section class="final-cta" id="search">
+      <div class="container final-grid">
+        <div>
+          <h2>Looking for Your Own Texas Countryside Property?</h2>
+          <p>
+            Whether you’re searching for a country home, land, ranch, farm, family compound,
+            recreational property, or rural retreat, Michael can help you find the right fit.
+          </p>
+          <div class="button-row">
+            <a class="btn btn-gold" href="mailto:michael.mechler@elliman.com?subject=Texas%20Countryside%20Property%20Search">Start My Property Search</a>
+            <a class="btn btn-outline-dark" href="mailto:michael.mechler@elliman.com?subject=320%20Pecan%203%20Private%20Showing">Schedule a Private Showing</a>
+          </div>
+        </div>
+
+        <div class="agent" id="about">
+          <img src="images/michael-mechler.jpg" alt="Michael Mechler" />
+          <div>
+            <h3>Michael Mechler</h3>
+            <div class="company">Douglas Elliman Real Estate</div>
+            <p>
+              Michael helps buyers and sellers navigate unique residential, land, acreage and countryside
+              properties throughout Central Texas.
+            </p>
+            <div class="agent-lines">
+              <a href="tel:15128100001">512.810.0001</a>
+              <a href="mailto:michael.mechler@elliman.com">michael.mechler@elliman.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact">
+      <div class="container footer-grid">
+        <div class="footer-logo">Texas<br>Countryside</div>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#featured">Featured Property</a>
+          <a href="#search">Find Properties</a>
+          <a href="#about">About Michael</a>
+          <a href="mailto:michael.mechler@elliman.com">Contact</a>
+        </nav>
+
+        <div class="footer-legal">
+          © 2026 Texas Countryside. All Rights Reserved.<br>
+          Privacy Policy&nbsp;&nbsp;|&nbsp;&nbsp;Terms of Use
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
