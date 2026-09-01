@@ -114,6 +114,31 @@
     .feature-story-detail img{width:100%;aspect-ratio:4/3;object-fit:cover}
     .feature-story-detail span{display:block;color:rgba(255,255,255,.72);font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:11px 9px 8px}
 
+    /* Floor plans */
+    .floorplans{padding:110px 0 118px;background:#f6f6f2;border-top:1px solid #e4e5de;border-bottom:1px solid #e4e5de}
+    .floorplans-grid{display:grid;grid-template-columns:minmax(280px,.52fr) minmax(0,1.48fr);gap:clamp(46px,6vw,96px);align-items:center}
+    .floorplans-copy h2{font-size:clamp(48px,5.2vw,80px);line-height:.95;letter-spacing:-.057em;font-weight:650;margin:16px 0 24px;max-width:600px}
+    .floorplans-copy>p{font-size:15px;line-height:1.75;color:#50554b;max-width:520px;margin:0 0 34px}
+    .plan-selector{border-top:1px solid #cfd2c8;max-width:520px}
+    .plan-tab{width:100%;display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:14px;text-align:left;border:0;border-bottom:1px solid #cfd2c8;background:transparent;padding:18px 0;color:#6f7469;cursor:pointer;transition:color .2s}
+    .plan-tab:hover,.plan-tab.active{color:var(--ink)}
+    .plan-tab .num{font-size:9px;font-weight:700;letter-spacing:.13em;color:var(--olive)}
+    .plan-tab strong{font-size:13px;font-weight:600}
+    .plan-tab .arrow{font-size:18px;font-weight:300;transition:transform .2s}
+    .plan-tab.active .arrow{transform:translateX(4px)}
+    .floorplan-stage{position:relative;width:100%;border:0;background:white;padding:0;box-shadow:0 20px 60px rgba(16,19,15,.1);cursor:zoom-in;overflow:hidden}
+    .floorplan-stage:before{content:"";display:block;padding-top:75%}
+    .floorplan-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:white;transition:transform .4s ease}
+    .floorplan-stage:hover img{transform:scale(1.01)}
+    .floorplan-stage-label{position:absolute;left:18px;right:18px;bottom:18px;background:rgba(16,19,15,.92);color:white;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:18px;backdrop-filter:blur(8px)}
+    .floorplan-stage-label strong{font-size:11px;text-transform:uppercase;letter-spacing:.09em}
+    .floorplan-stage-label span{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.67)}
+    .plan-modal{position:fixed;inset:0;z-index:120;background:rgba(7,9,7,.97);display:none;align-items:center;justify-content:center;padding:54px 74px;color:white}
+    .plan-modal.open{display:flex}
+    .plan-modal img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;background:white;box-shadow:0 24px 90px rgba(0,0,0,.38)}
+    .plan-modal-close{position:absolute;right:26px;top:20px;border:0;background:transparent;color:white;font-size:36px;font-weight:200;cursor:pointer}
+    .plan-modal-meta{position:absolute;left:30px;bottom:22px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.65)}
+
     /* Gallery cards */
     .explore{padding:90px 0 100px;background:#fff}
     .explore .section-intro{margin-bottom:44px}
@@ -180,6 +205,7 @@
       .featured{grid-template-columns:1fr 1fr}.featured-copy{padding:60px 44px}
       .facts-grid{grid-template-columns:repeat(5,1fr)}.fact{padding:36px 20px}
       .feature-story-grid{grid-template-columns:1fr 1.25fr;gap:52px}.feature-story-media{padding-left:34px}
+      .floorplans-grid{grid-template-columns:.65fr 1.35fr;gap:48px}
       .gallery-card.top,.gallery-card.bottom{grid-column:span 6;min-height:360px}.gallery-card:last-child{grid-column:3/span 8}
       .finder{grid-template-columns:1fr 1fr}
     }
@@ -192,6 +218,7 @@
       .featured{grid-template-columns:1fr}.featured-photo{min-height:420px}.featured-copy{padding:54px 25px 60px}.featured-copy h2{font-size:58px}.featured-actions{display:grid}.featured-actions .text-link{justify-content:center;height:44px}
       .facts-grid{grid-template-columns:1fr 1fr}.fact{border-bottom:1px solid rgba(255,255,255,.13);min-height:175px;padding:31px 24px}.fact:nth-child(odd){border-left:0}.fact:last-child{grid-column:1/-1}.fact p{max-width:none}
       .feature-story{padding:72px 0 82px}.feature-story-grid{grid-template-columns:1fr;gap:46px}.feature-story-copy{padding:0}.feature-story-copy h2{font-size:52px}.feature-line{grid-template-columns:118px 1fr}.feature-story-media{padding:0 0 46px 22px}.feature-story-detail{width:48%;min-width:0}.feature-story-actions{display:grid}.feature-story-actions .button{width:100%}
+      .floorplans{padding:72px 0 80px}.floorplans-grid{grid-template-columns:1fr;gap:38px}.floorplans-copy h2{font-size:52px}.plan-modal{padding:52px 10px}.plan-modal-meta{left:14px;bottom:14px}
       .explore{padding:70px 0}.gallery-grid{display:block}.gallery-card.top,.gallery-card.bottom{min-height:330px;margin-bottom:12px}.gallery-card.bottom{min-height:330px}
       .finder{grid-template-columns:1fr}.finder-story{min-height:540px}.finder-story-inner{padding:58px 25px}.finder-form{padding:54px 22px 64px}.form-row{grid-template-columns:1fr}.finder-form .button{width:100%}
       .footer-grid{grid-template-columns:1fr 1fr;gap:34px 25px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column}
@@ -206,7 +233,7 @@
       <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
         <a href="#discover">Homes + Land</a>
         <a href="#featured">Featured</a>
-        <a href="#rainwater">Property Features</a>
+        <a href="#floorplans">Floor Plans</a>
         <a href="#explore">Photos</a>
         <a href="#find">Find My Property</a>
         <a href="#footer">Contact</a>
@@ -302,6 +329,25 @@
       </div>
     </section>
 
+    <section class="floorplans" id="floorplans">
+      <div class="floorplans-grid wrap">
+        <div class="floorplans-copy reveal">
+          <div class="eyebrow">Floor plans</div>
+          <h2>See how the spaces work together.</h2>
+          <p>Explore the first and second floors of the main house, plus the separate guest house. Select a plan to preview it, then open it full screen to study the layout.</p>
+          <div class="plan-selector" role="tablist" aria-label="Floor plans">
+            <button class="plan-tab active" type="button" data-plan-src="assets/floor-plans/main-house-first-floor.jpg" data-plan-title="Main House · First Floor"><span class="num">01</span><strong>Main House · First Floor</strong><span class="arrow">→</span></button>
+            <button class="plan-tab" type="button" data-plan-src="assets/floor-plans/main-house-second-floor.jpg" data-plan-title="Main House · Second Floor"><span class="num">02</span><strong>Main House · Second Floor</strong><span class="arrow">→</span></button>
+            <button class="plan-tab" type="button" data-plan-src="assets/floor-plans/guest-house-floor-plan.jpg" data-plan-title="Guest House"><span class="num">03</span><strong>Guest House</strong><span class="arrow">→</span></button>
+          </div>
+        </div>
+        <button class="floorplan-stage reveal" id="floorplanStage" type="button" aria-label="Open Main House first floor plan full screen">
+          <img id="floorplanImage" src="assets/floor-plans/main-house-first-floor.jpg" alt="Main House first floor plan at 320 Pecan 3" loading="lazy">
+          <span class="floorplan-stage-label"><strong id="floorplanStageTitle">Main House · First Floor</strong><span>Open full floor plan ↗</span></span>
+        </button>
+      </div>
+    </section>
+
     <section class="explore" id="explore">
       <div class="wrap">
         <div class="section-intro reveal">
@@ -359,13 +405,23 @@
     <div class="wrap">
       <div class="footer-grid">
         <div class="footer-brand"><a class="brand" href="#top"><span>Texas</span><strong>Countryside</strong></a><p>A destination for homes with land, acreage and country property across Central Texas.</p></div>
-        <div><div class="footer-heading">Explore</div><div class="footer-links"><a href="#discover">Homes + land</a><a href="#featured">Featured property</a><a href="gallery.html?category=all">320 Pecan 3 photos</a></div></div>
+        <div><div class="footer-heading">Explore</div><div class="footer-links"><a href="#discover">Homes + land</a><a href="#featured">Featured property</a><a href="#floorplans">Floor plans</a><a href="gallery.html?category=all">320 Pecan 3 photos</a></div></div>
         <div><div class="footer-heading">Buyers</div><div class="footer-links"><a href="#find">Find my property</a><a href="#find">Acreage + land</a><a href="#find">Country homes</a></div></div>
         <div><div class="footer-heading">Get in touch</div><div class="footer-links"><a href="mailto:mechler@atxrealestate.com">mechler@atxrealestate.com</a><a href="#find">Tell us what you're looking for</a></div></div>
       </div>
-      <div class="footer-bottom"><span>© 2026 TexasCountryside.com. All rights reserved.</span><span>Property information is deemed reliable but should be independently verified.</span></div>
+      <div class="footer-disclosures" style="border-top:1px solid rgba(255,255,255,.1);padding-top:22px;margin-top:4px;display:flex;flex-wrap:wrap;gap:18px 28px">
+        <a href="information-about-brokerage-services.pdf" target="_blank" rel="noopener" style="font-size:10px;color:rgba(255,255,255,.66);text-decoration:underline;text-underline-offset:4px">Information About Brokerage Services</a>
+        <a href="consumer-protection-notice.pdf" target="_blank" rel="noopener" style="font-size:10px;color:rgba(255,255,255,.66);text-decoration:underline;text-underline-offset:4px">Consumer Protection Notice</a>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Mechler Ventures. All rights reserved.</span><span>Property information is deemed reliable but should be independently verified.</span></div>
     </div>
   </footer>
+
+  <div class="plan-modal" id="planModal" aria-hidden="true">
+    <button class="plan-modal-close" id="planModalClose" type="button" aria-label="Close floor plan">×</button>
+    <img id="planModalImage" src="assets/floor-plans/main-house-first-floor.jpg" alt="">
+    <div class="plan-modal-meta" id="planModalMeta">Main House · First Floor</div>
+  </div>
 
   <script src="gallery-data.js"></script>
   <script>
@@ -389,6 +445,27 @@
     navLinks.addEventListener('click',()=>{header.classList.remove('menu-open');menuButton.setAttribute('aria-expanded','false');});
     const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:.08,rootMargin:'0px 0px -40px'});
     document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    const planTabs=[...document.querySelectorAll('.plan-tab')];
+    const planStage=document.getElementById('floorplanStage');
+    const planImage=document.getElementById('floorplanImage');
+    const planStageTitle=document.getElementById('floorplanStageTitle');
+    const planModal=document.getElementById('planModal');
+    const planModalImage=document.getElementById('planModalImage');
+    const planModalMeta=document.getElementById('planModalMeta');
+    const planModalClose=document.getElementById('planModalClose');
+    let currentPlan={src:'assets/floor-plans/main-house-first-floor.jpg',title:'Main House · First Floor'};
+    planTabs.forEach(tab=>tab.addEventListener('click',()=>{
+      planTabs.forEach(t=>t.classList.toggle('active',t===tab));
+      currentPlan={src:tab.dataset.planSrc,title:tab.dataset.planTitle};
+      planImage.src=currentPlan.src;planImage.alt=`${currentPlan.title} floor plan at 320 Pecan 3`;
+      planStageTitle.textContent=currentPlan.title;planStage.setAttribute('aria-label',`Open ${currentPlan.title} floor plan full screen`);
+    }));
+    const openPlanModal=()=>{planModalImage.src=currentPlan.src;planModalImage.alt=`${currentPlan.title} floor plan at 320 Pecan 3`;planModalMeta.textContent=currentPlan.title;planModal.classList.add('open');planModal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'};
+    const closePlanModal=()=>{planModal.classList.remove('open');planModal.setAttribute('aria-hidden','true');document.body.style.overflow=''};
+    planStage.addEventListener('click',openPlanModal);planModalClose.addEventListener('click',closePlanModal);
+    planModal.addEventListener('click',e=>{if(e.target===planModal)closePlanModal()});
+    addEventListener('keydown',e=>{if(e.key==='Escape'&&planModal.classList.contains('open'))closePlanModal()});
+
     document.getElementById('propertyFinder').addEventListener('submit',e=>{
       e.preventDefault();
       const f=new FormData(e.currentTarget);
