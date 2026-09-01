@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TexasCountryside.com | Homes + Land </title>
+  <title>Homes + Land | TexasCountryside.com</title>
   <meta name="description" content="Discover homes with land, acreage, unrestricted property and country living across Central Texas. Currently featuring 320 Pecan 3 in Florence, Texas, offered at $1,300,000.">
   <meta name="theme-color" content="#10130f">
   <meta property="og:title" content="Homes + Land">
@@ -301,6 +301,7 @@
 
     /* Mobile heading fallback: native iOS text rendering with explicit breaks. */
     .mobile-heading-break{display:none}
+    .mobile-explore-title{display:none}
     @media (max-width:760px){
       .mobile-heading-break{display:block}
       .section-intro h2,
@@ -325,6 +326,20 @@
       /* Mobile gallery: remove the problematic display heading and lead with photos. */
       #explore .section-intro{margin-bottom:24px}
       #explore .section-intro h2{display:none !important}
+      #explore .mobile-explore-title{
+        display:block;
+        margin:14px 0 0;
+        color:var(--ink);
+        font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+        font-size:30px;
+        font-weight:600;
+        line-height:1.15;
+        letter-spacing:-.02em;
+        text-align:center;
+        text-rendering:auto;
+        -webkit-font-smoothing:antialiased;
+      }
+      #explore .mobile-explore-title span{display:block;white-space:nowrap}
       #explore .gallery-grid{
         display:flex;
         gap:12px;
@@ -431,6 +446,7 @@
         <div class="section-intro">
           <div class="eyebrow">Explore 320 Pecan 3</div>
           <h2>See every part that <br class="mobile-heading-break">makes it special.</h2>
+          <p class="mobile-explore-title" role="heading" aria-level="2"><span>See every part that</span><span>makes it special.</span></p>
         </div>
         <div class="gallery-grid">
           <a class="gallery-card top reveal" href="gallery.html?category=main-residence"><img src="assets/main-residence/main-exterior-hero.jpg" alt="Main residence at 320 Pecan 3"><div class="gallery-card-body"><div><h3>Main Residence</h3><small><span data-photo-count="main-residence">38</span> photos</small></div><span class="gallery-arrow">→</span></div></a>
