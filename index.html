@@ -151,7 +151,7 @@
     .explore{padding:90px 0 100px;background:#fff}
     .explore .section-intro{margin-bottom:44px}
     .gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-    .gallery-card{position:relative;overflow:hidden;background:#111;color:white;box-shadow:0 1px 0 rgba(0,0,0,.05);min-height:330px}
+    .gallery-card{display:block;position:relative;overflow:hidden;background:#111;color:white;box-shadow:0 1px 0 rgba(0,0,0,.05);min-height:330px}
     .gallery-card.top{grid-column:span 3}
     .gallery-card.bottom{grid-column:span 4;min-height:360px}
     .gallery-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
@@ -321,6 +321,30 @@
         -webkit-transform:none !important;
         filter:none !important;
       }
+
+      /* Mobile gallery: remove the problematic display heading and lead with photos. */
+      #explore .section-intro{margin-bottom:24px}
+      #explore .section-intro h2{display:none !important}
+      #explore .gallery-grid{
+        display:flex;
+        gap:12px;
+        overflow-x:auto;
+        padding:0 15px 8px 0;
+        margin-right:-15px;
+        scroll-snap-type:x mandatory;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+      }
+      #explore .gallery-grid::-webkit-scrollbar{display:none}
+      #explore .gallery-card.top,
+      #explore .gallery-card.bottom{
+        display:block;
+        flex:0 0 86%;
+        min-height:300px;
+        margin:0;
+        scroll-snap-align:start;
+      }
+      #explore .view-all{margin-top:18px}
     }
   </style>
 </head>
