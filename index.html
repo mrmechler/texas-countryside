@@ -6,6 +6,9 @@
   <title>TexasCountryside.com | Homes, Land & Acreage</title>
   <meta name="description" content="Discover homes with land, acreage, unrestricted property and country living across Central Texas. Currently featuring 320 Pecan 3 in Florence, Texas, offered at $1,300,000.">
   <meta name="theme-color" content="#10130f">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&display=swap" rel="stylesheet">
@@ -187,17 +190,14 @@
 
     /* Footer */
     footer{background:#111410;color:#fff;padding:62px 0 26px}
-    .footer-grid{display:grid;grid-template-columns:1.25fr .8fr 1.05fr 1.1fr;gap:54px;padding-bottom:44px}
-    .footer-brand p{font-size:11px;line-height:1.65;color:rgba(255,255,255,.56);max-width:310px;margin:18px 0 0}
-    .footer-heading{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;margin-bottom:18px;color:rgba(255,255,255,.82)}
-    .footer-links{display:grid;gap:11px}
-    .footer-links a{font-size:11px;line-height:1.5;color:rgba(255,255,255,.64)}
-    .footer-links a:hover{color:#fff}
-    .footer-brokerage{display:grid;gap:7px;align-content:start}
-    .footer-brokerage strong{font-size:13px;font-weight:650}
-    .footer-brokerage span,.footer-brokerage a{font-size:11px;line-height:1.55;color:rgba(255,255,255,.62)}
-    .footer-brokerage a:hover{color:#fff}
-    .footer-disclosure-links a{font-size:12px;line-height:1.55;color:rgba(255,255,255,.76);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+    .footer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:64px;padding-bottom:44px;align-items:start}
+    .footer-brand{display:block}.footer-brand p{font-size:11px;line-height:1.65;color:rgba(255,255,255,.56);max-width:320px;margin:18px 0 0}
+    .footer-col{display:grid;grid-template-rows:18px auto;row-gap:28px;align-content:start;min-width:0}
+    .footer-heading{margin:0;font-size:9px;line-height:18px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:rgba(255,255,255,.82)}
+    .footer-stack{display:grid;grid-auto-rows:minmax(18px,auto);row-gap:14px;align-content:start;margin:0;padding:0}
+    .footer-item{min-height:18px;font-size:11px;line-height:18px;color:rgba(255,255,255,.64);text-decoration:none;font-weight:400;display:block;margin:0;padding:0;white-space:nowrap}
+    a.footer-item:hover{color:#fff}
+    .footer-disclosure-links .footer-item{font-size:11px;color:rgba(255,255,255,.76);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
     .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;gap:20px;font-size:9px;line-height:1.6;color:rgba(255,255,255,.44)}
 
     /* Reveal */
@@ -205,6 +205,7 @@
     .reveal.visible{opacity:1;transform:none}
 
     @media (max-width:1100px){
+      .footer-item{white-space:normal}
       .wrap{width:min(var(--max),calc(100% - 40px))}
       .nav-links{display:none}.nav-cta{display:none}.menu-button{display:block}
       .site-header.menu-open{background:#111410}
@@ -233,6 +234,11 @@
       .aerial-tour{min-height:560px}.aerial-tour-content{padding:80px 0}.aerial-tour h2{font-size:52px}.finder{grid-template-columns:1fr}.finder-story{min-height:500px}.finder-story-inner{padding:58px 25px}.finder-contact{padding:54px 25px 64px}.finder-contact h3{font-size:44px}.contact-actions{display:grid}.contact-actions .button{width:100%}
       .footer-grid{grid-template-columns:1fr 1fr;gap:38px 28px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column}
     }
+
+    @media (max-width:580px){
+      .footer-grid{grid-template-columns:1fr;gap:28px}
+      .footer-brand{grid-column:auto}
+    }
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-media,.gallery-card img{transition:none}}
   </style>
 </head>
@@ -257,7 +263,7 @@
       <div class="hero-media" id="heroMedia" aria-hidden="true"></div>
       <div class="hero-content wrap">
         <h1>More land.<br>More freedom.<br>More life.</h1>
-        <p>Homes with land, acreage and country property across Central Texas.</p>
+        <p>Homes with land, acreage and country property in Central Texas.</p>
         <div class="hero-actions">
           <a class="button button-light" href="#discover">Explore Homes + Land</a>
         </div>
@@ -412,32 +418,37 @@
   <footer id="footer">
     <div class="wrap">
       <div class="footer-grid">
-        <div class="footer-brand">
+        <div class="footer-col footer-brand">
           <a class="brand" href="#top"><span>Texas</span><strong>Countryside</strong></a>
-          <p>Homes with land, acreage and country property across Central Texas.</p>
+          <p>Homes with land, acreage and country property in Central Texas.</p>
         </div>
-        <div>
+
+        <div class="footer-col">
           <div class="footer-heading">Explore</div>
-          <div class="footer-links">
-            <a href="#featured">Featured Property</a>
-            <a href="gallery.html?category=all">Photo Gallery</a>
-            <a href="#floorplans">Floor Plans</a>
-            <a href="#aerial-tour">Aerial Tour</a>
+          <div class="footer-stack">
+            <a class="footer-item" href="#featured">Featured Property</a>
+            <a class="footer-item" href="gallery.html?category=all">Photo Gallery</a>
+            <a class="footer-item" href="#floorplans">Floor Plans</a>
+            <a class="footer-item" href="#aerial-tour">Aerial Tour</a>
           </div>
         </div>
-        <div class="footer-brokerage">
-          <div class="footer-heading">Michael Mechler</div>
-          <strong>Michael Mechler</strong>
-          <span>Broker Associate</span>
-          <span>Douglas Elliman Real Estate</span>
-          <a href="tel:+15129372696" aria-label="Call Michael Mechler at 512-937-2696">(512) YES-2-OWN</a>
-          <a href="mailto:mechler@atxrealestate.com">mechler@atxrealestate.com</a>
+
+        <div class="footer-col">
+          <div class="footer-heading">Broker</div>
+          <div class="footer-stack">
+            <span class="footer-item">Michael Mechler</span>
+            <span class="footer-item">Broker Associate</span>
+            <span class="footer-item">Douglas Elliman Real Estate</span>
+            <a class="footer-item" href="tel:+15129372696" aria-label="Call Michael Mechler at 512-937-2696">(512) YES-2-OWN</a>
+            <a class="footer-item" href="mailto:mechler@atxrealestate.com">mechler@atxrealestate.com</a>
+          </div>
         </div>
-        <div>
+
+        <div class="footer-col">
           <div class="footer-heading">Disclosures</div>
-          <div class="footer-links footer-disclosure-links">
-            <a href="information-about-brokerage-services.pdf" target="_blank" rel="noopener">Information About Brokerage Services</a>
-            <a href="consumer-protection-notice.pdf" target="_blank" rel="noopener">Consumer Protection Notice</a>
+          <div class="footer-stack footer-disclosure-links">
+            <a class="footer-item" href="information-about-brokerage-services.pdf" target="_blank" rel="noopener">Information About Brokerage Services</a>
+            <a class="footer-item" href="consumer-protection-notice.pdf" target="_blank" rel="noopener">Consumer Protection Notice</a>
           </div>
         </div>
       </div>
