@@ -298,6 +298,30 @@
       .contact-direct{justify-content:center;text-align:center}
     }
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-media,.gallery-card img{transition:none}}
+
+    /*
+      iOS Safari repaint fix:
+      Avoid a fixed backdrop-filter layer on mobile. WebKit can leave stale
+      text tiles behind while scrolling, which appears as duplicated headings.
+    */
+    @supports (-webkit-touch-callout: none) {
+      @media (max-width:760px) {
+        html { scroll-behavior:auto }
+
+        .site-header,
+        .site-header.scrolled,
+        .site-header.menu-open {
+          -webkit-backdrop-filter:none !important;
+          backdrop-filter:none !important;
+          transition:none !important;
+        }
+
+        .site-header.scrolled,
+        .site-header.menu-open {
+          background:#10130f !important;
+        }
+      }
+    }
   </style>
 </head>
 <body>
@@ -467,7 +491,7 @@
             <div class="contact-direct">
               <a href="tel:+15129372696" aria-label="Call 512-937-2696">(512) YES-2-OWN</a>
               <span aria-hidden="true">·</span>
-              <a href="mailto:mechler@atxrealestate.com">mechler@atxrealestate.com</a>
+              <a href="/cdn-cgi/l/email-protection#a6cbc3c5cecac3d4e6c7d2ded4c3c7cac3d5d2c7d2c388c5c9cb"><span class="__cf_email__" data-cfemail="650800060d0900172504111d170004090016110411004b060a08">[email&#160;protected]</span></a>
             </div>
           </div>
         </div>
@@ -500,7 +524,7 @@
             <span class="footer-item">Broker Associate</span>
             <span class="footer-item">Douglas Elliman Real Estate</span>
             <a class="footer-item" href="tel:+15129372696" aria-label="Call Michael Mechler at 512-937-2696">(512) YES-2-OWN</a>
-            <a class="footer-item" href="mailto:mechler@atxrealestate.com">mechler@atxrealestate.com</a>
+            <a class="footer-item" href="/cdn-cgi/l/email-protection#ef828a8c87838a9daf8e9b979d8a8e838a9c9b8e9b8ac18c8082"><span class="__cf_email__" data-cfemail="09646c6a61656c7b49687d717b6c68656c7a7d687d6c276a6664">[email&#160;protected]</span></a>
           </div>
         </div>
 
@@ -522,7 +546,7 @@
     <div class="plan-modal-meta" id="planModalMeta">Main House · First Floor</div>
   </div>
 
-  <script src="gallery-data.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="gallery-data.js"></script>
   <script>
     if(typeof PHOTO_SETS!=="undefined"){
       document.querySelectorAll("[data-photo-count]").forEach(el=>{const key=el.dataset.photoCount;if(PHOTO_SETS[key])el.textContent=PHOTO_SETS[key].length;});
