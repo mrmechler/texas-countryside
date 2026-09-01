@@ -203,6 +203,29 @@
     .footer-disclosure-links .footer-item{font-size:11px;color:rgba(255,255,255,.76);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
     .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;gap:20px;font-size:9px;line-height:1.6;color:rgba(255,255,255,.44)}
 
+
+    /* Safari/iOS text-rendering safety: large text blocks never use transforms. */
+    .section-intro,
+    .featured-copy,
+    .floorplans-copy,
+    .feature-story-copy,
+    .aerial-tour-content,
+    .finder-story-inner,
+    .finder-contact-inner,
+    .section-intro h2,
+    .featured-copy h2,
+    .floorplans-copy h2,
+    .feature-story-copy h2,
+    .aerial-tour-content h2,
+    .finder-story-inner h2,
+    .finder-contact-inner h3{
+      opacity:1 !important;
+      transform:none !important;
+      transition:none !important;
+      will-change:auto !important;
+      -webkit-transform:none !important;
+    }
+
     /* Reveal */
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
     .reveal.visible{opacity:1;transform:none}
@@ -230,6 +253,16 @@
       .finder{grid-template-columns:1fr 1fr}
     }
     @media (max-width:760px){
+
+      .explore .section-intro h2{
+        font-size:40px !important;
+        line-height:1.04 !important;
+        letter-spacing:-.04em !important;
+        opacity:1 !important;
+        transform:none !important;
+        transition:none !important;
+        -webkit-transform:none !important;
+      }
       .wrap{width:calc(100% - 30px)}
       .site-header{height:72px}.nav{gap:12px}.brand span{font-size:9px}.brand strong{font-size:13px}.site-header.menu-open .nav-links{top:72px}
       .hero{height:88svh;min-height:660px;max-height:none}.hero-media{background-position:64% center}.hero-content{padding-top:50px}.hero h1{font-size:clamp(52px,15vw,76px)}.hero p{font-size:16px;max-width:330px}.hero-actions{display:grid;grid-template-columns:1fr;max-width:310px}.button{width:100%}
@@ -298,7 +331,7 @@
 
     <section class="discovery" id="discover">
       <div class="wrap">
-        <div class="section-intro reveal">
+        <div class="section-intro">
           <div class="eyebrow">Homes + Land</div>
           <h2>What are you looking for?</h2>
         </div>
@@ -315,7 +348,7 @@
 
     <section class="featured" id="featured">
       <div class="featured-photo reveal" role="img" aria-label="Aerial view of 320 Pecan 3 in Florence, Texas"></div>
-      <div class="featured-copy reveal">
+      <div class="featured-copy">
         <div class="eyebrow">Currently featured</div>
         <h2>320 Pecan 3</h2>
         <div class="featured-location">Florence, Texas</div>
@@ -347,7 +380,7 @@
 
     <section class="explore" id="explore">
       <div class="wrap">
-        <div class="section-intro reveal">
+        <div class="section-intro">
           <div class="eyebrow">Explore 320 Pecan 3</div>
           <h2>See every part that makes it special.</h2>
         </div>
@@ -366,7 +399,7 @@
 
     <section class="floorplans" id="floorplans">
       <div class="floorplans-grid wrap">
-        <div class="floorplans-copy reveal">
+        <div class="floorplans-copy">
           <div class="eyebrow">Floor plans</div>
           <h2>See how the spaces work together.</h2>
           <p>Explore both levels of the main house and the separate guest house. Select a floor plan to view the layout in detail.</p>
@@ -385,7 +418,7 @@
 
     <section class="feature-story" id="rainwater">
       <div class="feature-story-grid wrap">
-        <div class="feature-story-copy reveal">
+        <div class="feature-story-copy">
           <div class="eyebrow">Property Feature</div>
           <h2>Rainwater collection, already in place.</h2>
           <p>320 Pecan 3 includes a substantial rainwater collection and storage system integrated into the property. View it up close and from above to see how it fits into the acreage.</p>
@@ -405,7 +438,7 @@
 
     <section class="aerial-tour" id="aerial-tour">
       <div class="aerial-tour-media" aria-hidden="true"></div>
-      <div class="aerial-tour-content wrap reveal">
+      <div class="aerial-tour-content wrap">
         <div class="eyebrow">Aerial Tour</div>
         <h2>See the full property from above.</h2>
         <p>With multiple living spaces, a workshop, pool, gardens and 8.5 acres, the property makes more sense when you can see how everything fits together.</p>
@@ -415,14 +448,14 @@
 
     <section class="finder" id="find">
       <div class="finder-story">
-        <div class="finder-story-inner reveal">
+        <div class="finder-story-inner">
           <div class="eyebrow">Looking Beyond This Property</div>
           <h2>Looking for something different?</h2>
           <p>Tell me what you're looking for, and I'll help you find homes with land, acreage and country property across Central Texas.</p>
         </div>
       </div>
       <div class="finder-contact">
-        <div class="finder-contact-inner reveal">
+        <div class="finder-contact-inner">
           <div class="eyebrow">Direct Contact</div>
           <h3>Start with a conversation.</h3>
           <p>Text me what you have in mind, or call if you'd rather talk it through.</p>
