@@ -3,9 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TexasCountryside.com | Homes + Land</title>
+  <title>Homes + Land | TexasCountryside.com</title>
   <meta name="description" content="Discover homes with land, acreage, unrestricted property and country living across Central Texas. Currently featuring 320 Pecan 3 in Florence, Texas, offered at $1,300,000.">
   <meta name="theme-color" content="#10130f">
+  <meta property="og:title" content="Homes + Land">
+  <meta property="og:description" content="Homes with land, acreage and country property in Central Texas.">
+  <meta property="og:image" content="https://texascountryside.com/assets/aerial/aerial-featured.jpg">
+  <meta property="og:url" content="https://texascountryside.com/">
+  <meta property="og:type" content="website">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
@@ -201,6 +206,12 @@
     /* Reveal */
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
     .reveal.visible{opacity:1;transform:none}
+    /* Large centered headings fade only. Avoid transform-based rasterization artifacts in Safari. */
+    .section-intro.reveal,
+    .section-intro.reveal.visible{
+      transform:none;
+      transition:opacity .45s ease;
+    }
 
     @media (max-width:1100px){
       .footer-item{white-space:normal}
@@ -240,7 +251,6 @@
     /* Mobile refinement pass */
     @media (max-width:760px){
       .hero h1{font-size:clamp(48px,13vw,64px);line-height:.96;letter-spacing:-.05em;white-space:normal}
-      .section-intro.reveal,.section-intro.reveal.visible{transform:none;transition:opacity .45s ease}
       .section-intro h2{line-height:1.04;letter-spacing:-.04em}
       #explore .section-intro{margin-bottom:46px}
       .discovery-item{padding-top:30px}
@@ -296,8 +306,8 @@
           <article class="discovery-item"><strong>Homes with Land</strong><p>Room to spread out without giving up the comforts of home.</p></article>
           <article class="discovery-item"><strong>Acreage</strong><p>Land with room to build, grow, work or simply have more space around you.</p></article>
           <article class="discovery-item"><strong>Workshops + Barns</strong><p>Space for equipment, projects, hobbies, storage or work.</p></article>
-          <article class="discovery-item"><strong>Farm + Ranch</strong><p>Land and infrastructure for horses, livestock or ranch living.</p></article>
-          <article class="discovery-item"><strong>Multi-Generational</strong><p>Separate spaces that keep family close without giving up privacy.</p></article>
+          <article class="discovery-item"><strong>Farm + Ranch</strong><p>Land and infrastructure for horses, livestock, agriculture or ranch living.</p></article>
+          <article class="discovery-item"><strong>Multigenerational</strong><p>Separate spaces that keep family close without giving up privacy.</p></article>
           <article class="discovery-item"><strong>Recreational Land</strong><p>Land for weekends, trails, gatherings, recreation or simply getting away.</p></article>
         </div>
       </div>
@@ -453,7 +463,8 @@
         <div class="footer-col">
           <div class="footer-heading">Broker</div>
           <div class="footer-stack">
-            <span class="footer-item">Michael Mechler, Broker Associate</span>
+            <span class="footer-item">Michael Mechler</span>
+            <span class="footer-item">Broker Associate</span>
             <span class="footer-item">Douglas Elliman Real Estate</span>
             <a class="footer-item" href="tel:+15129372696" aria-label="Call Michael Mechler at 512-937-2696">(512) YES-2-OWN</a>
             <a class="footer-item" href="mailto:mechler@atxrealestate.com">mechler@atxrealestate.com</a>
