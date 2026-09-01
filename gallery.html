@@ -12,7 +12,7 @@
 <body>
 <header class="topbar"><div class="bar wrap"><a class="brand" href="index.html"><span>Texas</span><strong>Countryside</strong></a><a class="back" href="index.html#explore">← Back to property</a></div></header>
 <main>
-<section class="hero wrap"><div class="crumb">320 Pecan 3 · Florence, Texas</div><h1 id="title">All Photos</h1><p id="count"></p></section>
+<section class="hero wrap"><div class="crumb">320 Pecan 3 · Florence, Texas · $1,300,000</div><h1 id="title">All Photos</h1><p id="count"></p></section>
 <div class="tabs-wrap"><div class="tabs wrap" id="tabs"></div></div>
 <section class="gallery wrap" id="gallery" aria-live="polite"></section>
 </main>
@@ -26,7 +26,7 @@ const allPhotos=()=>[...new Set(order.slice(1).flatMap(k=>PHOTO_SETS[k]||[]))];c
 const title=document.getElementById('title'),count=document.getElementById('count'),gallery=document.getElementById('gallery'),tabs=document.getElementById('tabs');
 let activeIndex=0;
 function renderTabs(){tabs.innerHTML=order.map(k=>`<button class="tab ${k===current?'active':''}" data-cat="${k}">${labels[k]}</button>`).join('');tabs.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{current=b.dataset.cat;history.replaceState(null,'',`?category=${current}`);render();scrollTo({top:0,behavior:'smooth'});});}
-function render(){const photos=getPhotos();title.textContent=labels[current];count.textContent=`${photos.length} photographs · 320 Pecan 3`;gallery.innerHTML=photos.map((src,i)=>`<div class="photo" data-index="${i}"><img src="${src}" alt="${labels[current]} photo ${i+1} at 320 Pecan 3" loading="lazy"><span class="photo-index">${String(i+1).padStart(2,'0')}</span></div>`).join('');gallery.querySelectorAll('.photo').forEach(el=>el.onclick=()=>openLightbox(+el.dataset.index));renderTabs();document.title=`${labels[current]} | 320 Pecan 3 | TexasCountryside.com`;}
+function render(){const photos=getPhotos();title.textContent=labels[current];count.textContent=`${photos.length} photographs · Offered at $1,300,000`;gallery.innerHTML=photos.map((src,i)=>`<div class="photo" data-index="${i}"><img src="${src}" alt="${labels[current]} photo ${i+1} at 320 Pecan 3" loading="lazy"><span class="photo-index">${String(i+1).padStart(2,'0')}</span></div>`).join('');gallery.querySelectorAll('.photo').forEach(el=>el.onclick=()=>openLightbox(+el.dataset.index));renderTabs();document.title=`${labels[current]} | 320 Pecan 3 | TexasCountryside.com`;}
 const lb=document.getElementById('lightbox'),lbImg=lb.querySelector('img'),meta=document.getElementById('lightboxMeta');
 function openLightbox(i){activeIndex=i;updateLightbox();lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
 function closeLightbox(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow=''}
