@@ -299,28 +299,13 @@
     }
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-media,.gallery-card img{transition:none}}
 
-    /*
-      iOS Safari repaint fix:
-      Avoid a fixed backdrop-filter layer on mobile. WebKit can leave stale
-      text tiles behind while scrolling, which appears as duplicated headings.
-    */
-    @supports (-webkit-touch-callout: none) {
-      @media (max-width:760px) {
-        html { scroll-behavior:auto }
-
-        .site-header,
-        .site-header.scrolled,
-        .site-header.menu-open {
-          -webkit-backdrop-filter:none !important;
-          backdrop-filter:none !important;
-          transition:none !important;
-        }
-
-        .site-header.scrolled,
-        .site-header.menu-open {
-          background:#10130f !important;
-        }
-      }
+    /* iOS/WebKit: render wrapped display headings as discrete line boxes. */
+    .mobile-heading-line{display:inline}
+    @media (max-width:760px){
+      .ios-safe-heading{display:flex;flex-direction:column}
+      .ios-safe-heading .mobile-heading-line{display:block;white-space:nowrap}
+      .explore .ios-safe-heading{align-items:center}
+      .floorplans-copy .ios-safe-heading{align-items:flex-start}
     }
   </style>
 </head>
@@ -406,7 +391,7 @@
       <div class="wrap">
         <div class="section-intro">
           <div class="eyebrow">Explore 320 Pecan 3</div>
-          <h2>See every part that makes it special.</h2>
+          <h2 class="ios-safe-heading"><span class="mobile-heading-line">See every part that</span> <span class="mobile-heading-line">makes it special.</span></h2>
         </div>
         <div class="gallery-grid">
           <a class="gallery-card top reveal" href="gallery.html?category=main-residence"><img src="assets/main-residence/main-exterior-hero.jpg" alt="Main residence at 320 Pecan 3"><div class="gallery-card-body"><div><h3>Main Residence</h3><small><span data-photo-count="main-residence">38</span> photos</small></div><span class="gallery-arrow">→</span></div></a>
@@ -425,7 +410,7 @@
       <div class="floorplans-grid wrap">
         <div class="floorplans-copy">
           <div class="eyebrow">Floor plans</div>
-          <h2>See how the spaces work together.</h2>
+          <h2 class="ios-safe-heading"><span class="mobile-heading-line">See how the</span> <span class="mobile-heading-line">spaces work</span> <span class="mobile-heading-line">together.</span></h2>
           <p>Explore both levels of the main house and the separate guest house. Select a floor plan to view the layout in detail.</p>
           <div class="plan-selector" role="tablist" aria-label="Floor plans">
             <button class="plan-tab active" type="button" data-plan-src="assets/floor-plans/main-house-first-floor.jpg" data-plan-title="Main House · First Floor"><strong>Main House · First Floor</strong><span class="arrow">→</span></button>
