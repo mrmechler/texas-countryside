@@ -299,13 +299,28 @@
     }
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-media,.gallery-card img{transition:none}}
 
-    /* iOS/WebKit: render wrapped display headings as discrete line boxes. */
-    .mobile-heading-line{display:inline}
+    /* Mobile heading fallback: native iOS text rendering with explicit breaks. */
+    .mobile-heading-break{display:none}
     @media (max-width:760px){
-      .ios-safe-heading{display:flex;flex-direction:column}
-      .ios-safe-heading .mobile-heading-line{display:block;white-space:nowrap}
-      .explore .ios-safe-heading{align-items:center}
-      .floorplans-copy .ios-safe-heading{align-items:flex-start}
+      .mobile-heading-break{display:block}
+      .section-intro h2,
+      .featured-copy h2,
+      .floorplans-copy h2,
+      .feature-story-copy h2,
+      .aerial-tour h2,
+      .finder-story h2,
+      .finder-contact h3{
+        display:block !important;
+        font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif !important;
+        font-weight:600 !important;
+        letter-spacing:-.025em !important;
+        line-height:1.08 !important;
+        text-rendering:auto !important;
+        -webkit-font-smoothing:antialiased !important;
+        transform:none !important;
+        -webkit-transform:none !important;
+        filter:none !important;
+      }
     }
   </style>
 </head>
@@ -391,7 +406,7 @@
       <div class="wrap">
         <div class="section-intro">
           <div class="eyebrow">Explore 320 Pecan 3</div>
-          <h2 class="ios-safe-heading"><span class="mobile-heading-line">See every part that</span> <span class="mobile-heading-line">makes it special.</span></h2>
+          <h2>See every part that <br class="mobile-heading-break">makes it special.</h2>
         </div>
         <div class="gallery-grid">
           <a class="gallery-card top reveal" href="gallery.html?category=main-residence"><img src="assets/main-residence/main-exterior-hero.jpg" alt="Main residence at 320 Pecan 3"><div class="gallery-card-body"><div><h3>Main Residence</h3><small><span data-photo-count="main-residence">38</span> photos</small></div><span class="gallery-arrow">→</span></div></a>
@@ -410,7 +425,7 @@
       <div class="floorplans-grid wrap">
         <div class="floorplans-copy">
           <div class="eyebrow">Floor plans</div>
-          <h2 class="ios-safe-heading"><span class="mobile-heading-line">See how the</span> <span class="mobile-heading-line">spaces work</span> <span class="mobile-heading-line">together.</span></h2>
+          <h2>See how the <br class="mobile-heading-break">spaces work <br class="mobile-heading-break">together.</h2>
           <p>Explore both levels of the main house and the separate guest house. Select a floor plan to view the layout in detail.</p>
           <div class="plan-selector" role="tablist" aria-label="Floor plans">
             <button class="plan-tab active" type="button" data-plan-src="assets/floor-plans/main-house-first-floor.jpg" data-plan-title="Main House · First Floor"><strong>Main House · First Floor</strong><span class="arrow">→</span></button>
