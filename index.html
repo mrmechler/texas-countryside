@@ -69,8 +69,7 @@
     .discovery-grid{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .discovery-item{padding:32px 26px 34px;border-left:1px solid var(--line);min-height:188px}
     .discovery-item:first-child{border-left:0}
-    .discovery-index{display:block;color:var(--olive);font-size:10px;font-weight:700;letter-spacing:.16em;margin-bottom:36px}
-    .discovery-item strong{display:block;font-size:15px;line-height:1.2;margin-bottom:10px;font-weight:650}
+        .discovery-item strong{display:block;font-size:15px;line-height:1.2;margin-bottom:10px;font-weight:650}
     .discovery-item p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}
     .discovery-action{text-align:center;margin-top:38px}
 
@@ -125,10 +124,9 @@
     .floorplans-copy h2{font-size:clamp(48px,5.2vw,80px);line-height:.95;letter-spacing:-.057em;font-weight:650;margin:16px 0 24px;max-width:600px}
     .floorplans-copy>p{font-size:15px;line-height:1.75;color:#50554b;max-width:520px;margin:0 0 34px}
     .plan-selector{border-top:1px solid #cfd2c8;max-width:520px}
-    .plan-tab{width:100%;display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:14px;text-align:left;border:0;border-bottom:1px solid #cfd2c8;background:transparent;padding:18px 0;color:#6f7469;cursor:pointer;transition:color .2s}
+    .plan-tab{width:100%;display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px;text-align:left;border:0;border-bottom:1px solid #cfd2c8;background:transparent;padding:18px 0;color:#6f7469;cursor:pointer;transition:color .2s}
     .plan-tab:hover,.plan-tab.active{color:var(--ink)}
-    .plan-tab .num{font-size:9px;font-weight:700;letter-spacing:.13em;color:var(--olive)}
-    .plan-tab strong{font-size:13px;font-weight:600}
+        .plan-tab strong{font-size:13px;font-weight:600}
     .plan-tab .arrow{font-size:18px;font-weight:300;transition:transform .2s}
     .plan-tab.active .arrow{transform:translateX(4px)}
     .floorplan-stage{position:relative;width:100%;border:0;background:white;padding:0;box-shadow:0 20px 60px rgba(16,19,15,.1);cursor:zoom-in;overflow:hidden}
@@ -225,7 +223,7 @@
       .site-header{height:72px}.nav{gap:12px}.brand span{font-size:9px}.brand strong{font-size:13px}.site-header.menu-open .nav-links{top:72px}
       .hero{height:88svh;min-height:660px;max-height:none}.hero-media{background-position:64% center}.hero-content{padding-top:50px}.hero h1{font-size:clamp(52px,15vw,76px)}.hero p{font-size:16px;max-width:330px}.hero-actions{display:grid;grid-template-columns:1fr;max-width:310px}.button{width:100%}
       .discovery{padding:72px 0}.section-intro{margin-bottom:38px}.section-intro h2{font-size:40px}
-      .discovery-grid{grid-template-columns:1fr 1fr}.discovery-item:nth-child(odd){border-left:0}.discovery-item:nth-child(even){border-left:1px solid var(--line)}.discovery-item{border-bottom:1px solid var(--line);padding:24px 18px;min-height:168px}.discovery-index{margin-bottom:24px}
+      .discovery-grid{grid-template-columns:1fr 1fr}.discovery-item:nth-child(odd){border-left:0}.discovery-item:nth-child(even){border-left:1px solid var(--line)}.discovery-item{border-bottom:1px solid var(--line);padding:24px 18px;min-height:168px}
       .featured{grid-template-columns:1fr}.featured-photo{min-height:420px}.featured-copy{padding:54px 25px 60px}.featured-copy h2{font-size:58px}.featured-price-block{gap:12px;margin-bottom:25px}.featured-price{font-size:28px}.featured-actions{display:grid}.featured-actions .text-link{justify-content:center;height:44px}
       .facts-grid{grid-template-columns:1fr 1fr}.fact{border-bottom:1px solid rgba(255,255,255,.13);min-height:175px;padding:31px 24px}.fact:nth-child(odd){border-left:0}.fact:last-child{grid-column:1/-1}.fact p{max-width:none}
       .feature-story{padding:72px 0 82px}.feature-story-grid{grid-template-columns:1fr;gap:46px}.feature-story-copy{padding:0}.feature-story-copy h2{font-size:52px}.feature-line{grid-template-columns:118px 1fr}.feature-story-media{padding:0 0 46px 22px}.feature-story-detail{width:48%;min-width:0}.feature-story-actions{display:grid}.feature-story-actions .button{width:100%}
@@ -238,6 +236,23 @@
     @media (max-width:580px){
       .footer-grid{grid-template-columns:1fr;gap:28px}
       .footer-brand{grid-column:auto}
+    }
+    /* Mobile refinement pass */
+    @media (max-width:760px){
+      .hero h1{font-size:clamp(48px,13vw,64px);line-height:.96;letter-spacing:-.05em;white-space:normal}
+      .section-intro.reveal,.section-intro.reveal.visible{transform:none;transition:opacity .45s ease}
+      .section-intro h2{line-height:1.04;letter-spacing:-.04em}
+      #explore .section-intro{margin-bottom:46px}
+      .discovery-item{padding-top:30px}
+      .discovery-item strong{margin-top:0}
+      .plan-tab{grid-template-columns:1fr auto;padding:20px 0}
+      .contact-direct{justify-content:center;text-align:center;margin-top:18px;gap:8px 12px}
+      .contact-direct span[aria-hidden="true"]{display:none}
+      .contact-direct a{width:100%;text-align:center}
+      #discover,#featured,#explore,#floorplans,#rainwater,#aerial-tour{scroll-margin-top:78px}
+    }
+    @media (min-width:761px){
+      .contact-direct{justify-content:center;text-align:center}
     }
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.hero-media,.gallery-card img{transition:none}}
   </style>
@@ -278,12 +293,12 @@
           <h2>What are you looking for?</h2>
         </div>
         <div class="discovery-grid reveal">
-          <article class="discovery-item"><span class="discovery-index">01</span><strong>Homes with land</strong><p>Room to spread out without giving up the comforts of home.</p></article>
-          <article class="discovery-item"><span class="discovery-index">02</span><strong>Acreage + land</strong><p>Land with room to build, grow, work or simply have more space around you.</p></article>
-          <article class="discovery-item"><span class="discovery-index">03</span><strong>Barns + workshops</strong><p>Space for equipment, projects, hobbies, storage or work.</p></article>
-          <article class="discovery-item"><span class="discovery-index">04</span><strong>Horse + ranch</strong><p>Property with the land and infrastructure to support horses, livestock and ranch life.</p></article>
-          <article class="discovery-item"><span class="discovery-index">05</span><strong>Multigenerational</strong><p>Separate spaces that keep family close without giving up privacy.</p></article>
-          <article class="discovery-item"><span class="discovery-index">06</span><strong>Recreational land</strong><p>Land for weekends, trails, gatherings, recreation or simply getting away.</p></article>
+          <article class="discovery-item"><strong>Homes with land</strong><p>Room to spread out without giving up the comforts of home.</p></article>
+          <article class="discovery-item"><strong>Acreage + land</strong><p>Land with room to build, grow, work or simply have more space around you.</p></article>
+          <article class="discovery-item"><strong>Barns + workshops</strong><p>Space for equipment, projects, hobbies, storage or work.</p></article>
+          <article class="discovery-item"><strong>Horse + ranch</strong><p>Property with the land and infrastructure to support horses, livestock and ranch life.</p></article>
+          <article class="discovery-item"><strong>Multigenerational</strong><p>Separate spaces that keep family close without giving up privacy.</p></article>
+          <article class="discovery-item"><strong>Recreational land</strong><p>Land for weekends, trails, gatherings, recreation or simply getting away.</p></article>
         </div>
       </div>
     </section>
@@ -346,9 +361,9 @@
           <h2>See how the spaces work together.</h2>
           <p>Explore both levels of the main house and the separate guest house. Select a floor plan to view the layout in detail.</p>
           <div class="plan-selector" role="tablist" aria-label="Floor plans">
-            <button class="plan-tab active" type="button" data-plan-src="assets/floor-plans/main-house-first-floor.jpg" data-plan-title="Main House · First Floor"><span class="num">01</span><strong>Main House · First Floor</strong><span class="arrow">→</span></button>
-            <button class="plan-tab" type="button" data-plan-src="assets/floor-plans/main-house-second-floor.jpg" data-plan-title="Main House · Second Floor"><span class="num">02</span><strong>Main House · Second Floor</strong><span class="arrow">→</span></button>
-            <button class="plan-tab" type="button" data-plan-src="assets/floor-plans/guest-house-floor-plan.jpg" data-plan-title="Guest House"><span class="num">03</span><strong>Guest House</strong><span class="arrow">→</span></button>
+            <button class="plan-tab active" type="button" data-plan-src="assets/floor-plans/main-house-first-floor.jpg" data-plan-title="Main House · First Floor"><strong>Main House · First Floor</strong><span class="arrow">→</span></button>
+            <button class="plan-tab" type="button" data-plan-src="assets/floor-plans/main-house-second-floor.jpg" data-plan-title="Main House · Second Floor"><strong>Main House · Second Floor</strong><span class="arrow">→</span></button>
+            <button class="plan-tab" type="button" data-plan-src="assets/floor-plans/guest-house-floor-plan.jpg" data-plan-title="Guest House"><strong>Guest House</strong><span class="arrow">→</span></button>
           </div>
         </div>
         <button class="floorplan-stage reveal" id="floorplanStage" type="button" aria-label="Open Main House first floor plan full screen">
@@ -436,7 +451,8 @@
         <div class="footer-col">
           <div class="footer-heading">Broker</div>
           <div class="footer-stack">
-            <span class="footer-item">Michael Mechler, Broker Associate</span>
+            <span class="footer-item">Michael Mechler</span>
+            <span class="footer-item">Broker Associate</span>
             <span class="footer-item">Douglas Elliman Real Estate</span>
             <a class="footer-item" href="tel:+15129372696" aria-label="Call Michael Mechler at 512-937-2696">(512) YES-2-OWN</a>
             <a class="footer-item" href="mailto:mechler@atxrealestate.com">mechler@atxrealestate.com</a>
